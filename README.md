@@ -6,8 +6,14 @@ Resilient AI is a full-stack conversational application built with FastAPI, Lite
 
 ## 1. Live URLs
 
-- **Frontend**: TO_BE_DEPLOYED
-- **Backend**: TO_BE_DEPLOYED
+- **Frontend**: https://resilient-one.vercel.app
+- **Backend**: https://resilient-ai-gateway.onrender.com
+- **Backend Health**: https://resilient-ai-gateway.onrender.com/health
+
+> **Deployment Notes**:
+> - **Hosting**: The live frontend is hosted on **Vercel**, and the live backend is hosted on **Render**.
+> - **Storage**: The public Render deployment runs on Render's free web service tier, which uses ephemeral container filesystem storage (Render persistent disks require paid Starter instances). The repository's canonical Docker configuration specifies SQLite persistence at `/data/app.db` via a named Docker volume (`app_data`), which has been verified locally across container restarts and recreations.
+> - **Cold Starts**: Render free-tier web services spin down after periods of inactivity. If the service is idle, the initial request may take 40–50 seconds to spin up before returning to standard low-latency responses.
 
 ---
 
